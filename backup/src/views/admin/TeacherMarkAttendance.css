@@ -1,0 +1,31 @@
+.dark-list {
+  padding: 25px;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  display: inline-flex;
+  border-radius: 15px;
+  margin-top: 10px;
+  justify-content: center;
+}
+.dark-list h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #1b1b1b;
+}
+.dark-list ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.dark-list ul li + li {
+  margin-top: 15px;
+}
+.dark-list ul li {
+  text-decoration: none;
+  color: #1b1b1b;
+  font-size: 18px;
+  font-weight: 500;
+}
