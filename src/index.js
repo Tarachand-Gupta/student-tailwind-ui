@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-
-
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "assets/styles/tailwind.css";
 
@@ -13,19 +11,19 @@ import Admin from "layouts/Admin.js";
 import Auth from "layouts/Auth.js";
 
 // views without layouts
-import Chat from "./components/Chat/Chat"
+import Chat from "./components/Chat/Chat";
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
-import 'index.css';
-import { UserContextProvider } from './Context/userContext'
-import axios from 'axios';
-import TimeAgo from 'javascript-time-ago'
-import en from 'javascript-time-ago/locale/en'
+import "index.css";
+import { UserContextProvider } from "./Context/userContext";
+import axios from "axios";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
 
-TimeAgo.addDefaultLocale(en)
+TimeAgo.addDefaultLocale(en);
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = "https://student-react-api.herokuapp.com/";
 ReactDOM.render(
   <BrowserRouter>
     <UserContextProvider>
@@ -41,7 +39,7 @@ ReactDOM.render(
         {/* add redirect for first page */}
         <Redirect from="*" to="/" />
       </Switch>
-    </UserContextProvider >
+    </UserContextProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
