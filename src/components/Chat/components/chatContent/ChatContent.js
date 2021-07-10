@@ -158,7 +158,7 @@ const ChatContent = (props) => {
   }
 
   const socketMethods = () => {
-    socketRef.current = io.connect("http://localhost:4000");
+    socketRef.current = io.connect("https://student-react-api.herokuapp.com");
 
     socketRef.current.emit('user-update socketID in userDB', USER_CONTEXT._id);
 
