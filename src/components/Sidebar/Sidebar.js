@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 
 import NotificationDropdown from "components/Dropdowns/NotificationDropdown.js";
 import UserDropdown from "components/Dropdowns/UserDropdown.js";
-import { userContext } from "../../Context/userContext"
+import { userContext } from "../../Context/userContext";
 
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   const { user_context } = useContext(userContext);
   const [USER_CONTEXT] = user_context;
-
 
   return (
     <>
@@ -32,10 +31,7 @@ export default function Sidebar() {
             Student.
           </Link>
           {/* User */}
-          <ul className="md:hidden items-center flex flex-wrap list-none">
-
-
-          </ul>
+          <ul className="md:hidden items-center flex flex-wrap list-none"></ul>
           {/* Collapse */}
           <div
             className={
@@ -185,7 +181,8 @@ export default function Sidebar() {
                   <i
                     className={
                       "fas fa-map-marked mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/notesandmedia") !== -1
+                      (window.location.href.indexOf("/admin/notesandmedia") !==
+                      -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
@@ -204,8 +201,7 @@ export default function Sidebar() {
             {/* Navigation */}
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-              {(USER_CONTEXT.studentUserType === "Student")
-                ?
+              {USER_CONTEXT.studentUserType === "Student" ? (
                 <li className="items-center">
                   <Link
                     className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
@@ -215,7 +211,7 @@ export default function Sidebar() {
                     Give Attendance
                   </Link>
                 </li>
-                :
+              ) : (
                 <li className="items-center">
                   <Link
                     className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
@@ -225,9 +221,8 @@ export default function Sidebar() {
                     Take Attendance
                   </Link>
                 </li>
-              }
-              {(USER_CONTEXT.studentUserType === "Teacher")
-                &&
+              )}
+              {USER_CONTEXT.studentUserType === "Teacher" && (
                 <li className="items-center">
                   <Link
                     className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
@@ -237,47 +232,7 @@ export default function Sidebar() {
                     View Attendance
                   </Link>
                 </li>
-
-              }
-              <li className="items-center">
-                <Link
-                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  to="/auth/register"
-                >
-                  <i className="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>{" "}
-                  Extras
-                </Link>
-              </li>
-            </ul>
-
-            {/* Divider */}
-            <hr className="my-4 md:min-w-full" />
-            {/* Heading */}
-            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Social
-            </h6>
-
-
-            <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-              <li className="items-center">
-                <Link
-                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  to="/landing"
-                >
-                  <i className="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>{" "}
-                  Feed
-                </Link>
-              </li>
-
-              <li className="items-center">
-                <Link
-                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  to="/profile"
-                >
-                  <i className="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>{" "}
-                  Current Affairs
-                </Link>
-              </li>
+              )}
             </ul>
 
             {/* Divider */}
